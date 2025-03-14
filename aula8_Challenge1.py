@@ -18,6 +18,7 @@ Vamos trabalhar:
 '''
 
 # Produtos com seus preços
+# Produtos com seus preços
 produtos = {
     'camiseta': 39.90,
     'calca jeans': 129.90,
@@ -26,36 +27,22 @@ produtos = {
     'mochila': 89.90
 }
 
-# Função para cadastrar o usuário
-def cadastrar_usuario():
-    print("\n--- Cadastro de Usuário ---")
-    nome = input("Digite seu nome: ")
-    email = input("Digite seu e-mail: ")
-    senha = input("Digite sua senha: ")
-    return nome, email, senha
-
-# Função para fazer o login
-def login_usuario(email_cadastrado, senha_cadastrada):
-    print("\n--- Login ---")
-    email = input("Digite seu e-mail: ")
-    senha = input("Digite sua senha: ")
-    
-    if email == email_cadastrado and senha == senha_cadastrada:
-        return True
-    else:
-        return False
-
 # Cadastro inicial (primeiro o usuário deve se cadastrar)
-nome_usuario, email_usuario, senha_usuario = cadastrar_usuario()
+print("\n--- Cadastro de Usuário ---")
+nome_usuario = input("Digite seu nome: ")
+email_usuario = input("Digite seu e-mail: ")
+senha_usuario = input("Digite sua senha: ")
 
 # Login do usuário
-logado = False
-while not logado:
-    if login_usuario(email_usuario, senha_usuario):
-        logado = True
-        print(f"Bem-vindo de volta, {nome_usuario}!")
-    else:
-        print("E-mail ou senha incorretos. Tente novamente.")
+print("\n--- Login ---")
+email = input("Digite seu e-mail: ")
+senha = input("Digite sua senha: ")
+
+if email == email_usuario and senha == senha_usuario:
+    print(f"Bem-vindo de volta, {nome_usuario}!")
+else:
+    print("E-mail ou senha incorretos. Acesso negado.")
+    exit()  # Encerra o programa se o login falhar
 
 # Exibindo produtos disponíveis
 print("\nProdutos disponíveis:")
